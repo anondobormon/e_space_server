@@ -4,7 +4,7 @@
   "description": "real-state_website",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js"
+    "start": "nodemon index.js"
   },
   "author": "anondo_bormon",
   "license": "ISC",

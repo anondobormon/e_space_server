@@ -4,10 +4,10 @@ const mongoose = require("mongoose");
 const dotenv = require("dotenv");
 const bodyParser = require("body-parser");
 const cors = require("cors");
-const paymentRouter = require("./router/payment");
 
 //Internal Imports
 const userRouter = require("./router/userRouter");
+const paymentRouter = require("./router/payment");
 const buyRouter = require("./router/buyRouter");
 const getPropertyRouter = require("./router/getPropertyRouter");
 
