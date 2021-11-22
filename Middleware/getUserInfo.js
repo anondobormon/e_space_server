@@ -1,6 +1,6 @@
 const User = require("../Model/UserSchema");
 
-const GetUserInfo = async (req, res, next) => {
+const getUserInfo = async (req, res, next) => {
   try {
     let allUsers = await User.find().populate("buyProperty");
     res.send(allUsers);
@@ -9,4 +9,4 @@ const GetUserInfo = async (req, res, next) => {
   }
 };
 
-module.exports = GetUserInfo;
+module.exports = getUserInfo;
