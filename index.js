@@ -10,6 +10,7 @@ const userRouter = require("./router/userRouter");
 const paymentRouter = require("./router/payment");
 const buyRouter = require("./router/buyRouter");
 const getPropertyRouter = require("./router/getPropertyRouter");
+const reviewsRouter = require("./router/reviews");
 
 const app = express();
 dotenv.config();
@@ -36,6 +37,7 @@ app.use("/", userRouter);
 app.use("/", paymentRouter);
 app.use("/", buyRouter);
 app.use("/", getPropertyRouter);
+app.use("/api/", reviewsRouter);
 
 app.listen(port, () => {
   console.log(`App listing to port ${port}`);

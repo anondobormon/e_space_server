@@ -7,6 +7,7 @@ const AddBuy = async (req, res, next) => {
     //Get user information form frontend
     const { uid, propertyId } = req.body;
 
+    console.log(uid, propertyId);
     //Find data from database
     const userDetails = await User.find({
       uid: uid,
@@ -14,16 +15,16 @@ const AddBuy = async (req, res, next) => {
 
     //Create buy property data for insert database
     let userId = userDetails[0]._id;
-    // let buyProperty = {
-    //   propertyId: propertyId,
-    //   userId: userId,
-    // };
+    let buyProperty = {
+      propertyId: propertyId,
+      userId: userId,
+    };
 
-    //Push data to database
-    // let buy = await new BuyProperty(buyProperty);
-    // let addedBuyProperty = await buy.save();
-
-    //Push buy property data to database
+    // Push data to database
+    let buy = await new BuyProperty(buyProperty);
+    let addedBuyProperty = await buy.save();
+    console.log(addedBuyProperty);
+    // Push buy property data to database
     const data = await User.updateOne(
       { _id: userId },
       {
